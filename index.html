@@ -1,0 +1,74 @@
+ts/${appId}/public/data/registrations;
+                
+                db.collection(collectionPath).get()
+                    .then((querySnapshot) => {
+                        let html = '';
+                        if (querySnapshot.empty) {
+                            listContainer.innerHTML = <tr><td colspan="6" class="text-center py-4 text-slate-400">لا توجد طلبات مسجلة بعد في السحابة.</td></tr>;
+                            return;
+                        }
+
+                        querySnapshot.forEach((doc) => {
+                            const data = doc.data();
+                            let date = 'قيد المعالجة';
+                            if (data.timestamp) {
+                                if (typeof data.timestamp.toDate === 'function') {
+                                    date = data.timestamp.toDate().toLocaleDateString('ar-EG');
+                                } else if (typeof data.timestamp === 'string') {
+                                    date = new Date(data.timestamp).toLocaleDateString('ar-EG');
+                                }
+                            }
+                            html += renderRow(data, date);
+                        });
+                        listContainer.innerHTML = html;
+                    })
+                    .catch((error) => {
+                        console.error("Error fetching registrations:", error);
+                        loadLocalRegistrations();
+                    });
+            } else {
+                loadLocalRegistrations();
+            }
+        }
+
+        function loadLocalRegistrations() {
+            const listContainer = document.getElementById('registrations-list');
+            const registrations = JSON.parse(localStorage.getItem('unique_registrations') || '[]');
+            if (registrations.length === 0) {
+                listContainer.innerHTML = <tr><td colspan="6" class="text-center py-4 text-slate-400">لا توجد طلبات مسجلة محلياً بعد (يرجى التجربة من نفس الجهاز).</td></tr>;
+                return;
+            }
+            let html = '';
+            registrations.forEach(data => {
+                const date = data.timestamp ? new Date(data.timestamp).toLocaleDateString('ar-EG') : 'قيد المعالجة';
+                html += renderRow(data, date);
+            });
+            listContainer.innerHTML = html;
+        }
+
+        function renderRow(data, date) {
+            let serviceText = data.service;
+            if (data.service === "workshop") {
+                serviceText = "ورشة العمل الرئيسية";
+            } else if (data.service === "consultation") {
+                serviceText = "جلسة استشارة خاصة";
+            } else if (data.service === "cv-review") {
+                serviceText = "مراجعة السيرة و LinkedIn";
+            }
+
+            return 
+                <tr class="bg-white border-b hover:bg-slate-50 transition-colors">
+                    <td class="px-4 py-3 font-semibold text-slate-900">${data.name || ''}</td>
+                    <td class="px-4 py-3">${data.phone || ''}</td>
+                    <td class="px-4 py-3">${data.email || ''}</td>
+                    <td class="px-4 py-3 text-xs text-unique-teal font-semibold">${serviceText}</td>
+                    <td class="px-4 py-3 text-xs max-w-xs truncate">${data.message || 'بلا تحديات'}</td>
+                    <td class="px-4 py-3 text-xs text-slate-400">${date}</td>
+                </tr>
+            ;
+        }
+    </script>
+</body>
+</html>
+
+``
