@@ -1,0 +1,1040 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مجموعة UNIQUE | من البحث عن وظيفة إلى جذب الفرص</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts: Cairo -->
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Firebase Compatibility SDKs -->
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore-compat.js"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        cairo: ['Cairo', 'sans-serif'],
+                    },
+                    colors: {
+                        unique: {
+                            deep: '#1e293b',
+                            teal: '#0d9488',
+                            softTeal: '#ccfbf1',
+                            accent: '#f59e0b',
+                            slateLight: '#f8fafc'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Cairo', sans-serif;
+            scroll-behavior: smooth;
+        }
+        .gradient-bg {
+            background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+        }
+        .teal-gradient {
+            background: linear-gradient(135deg, #0d9488 0%, #115e59 100%);
+        }
+    </style>
+</head>
+<body class="bg-unique-slateLight text-slate-800 antialiased selection:bg-unique-teal selection:text-white">
+
+    <!-- Navbar -->
+    <header class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-slate-100 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <div class="flex items-center gap-3">
+                    <div class="w-12 h-12 rounded-xl teal-gradient flex items-center justify-center text-white font-extrabold text-xl shadow-md shadow-teal-500/20">
+                        U
+                    </div>
+                    <div>
+                        <span class="text-xl font-extrabold text-slate-900 tracking-wider">UNIQUE</span>
+                        <span class="text-xs block text-unique-teal font-semibold">GROUP</span>
+                    </div>
+                </div>
+                <nav class="hidden md:flex space-x-reverse space-x-8 text-sm font-semibold text-slate-600">
+                    <a href="#about" class="hover:text-unique-teal transition-colors">من نحن</a>
+                    <a href="#problem" class="hover:text-unique-teal transition-colors">التحدي المهني</a>
+                    <a href="#modules" class="hover:text-unique-teal transition-colors">محاور الورشة</a>
+                    <a href="#assessment" class="hover:text-unique-teal transition-colors">مقياس الجاذبية المهنية</a>
+                    <a href="#journey" class="hover:text-unique-teal transition-colors">قصة نجاح</a>
+                </nav>
+                <div>
+                    <a href="#register" class="bg-unique-teal hover:bg-teal-700 text-white px-6 py-2.5 rounded-full text-sm font-bold shadow-lg shadow-teal-500/20 transition-all hover:-translate-y-0.5 inline-block">
+                        احجز مقعدك الآن
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative overflow-hidden gradient-bg text-white py-20 lg:py-32">
+        <div class="absolute inset-0 opacity-10">
+            <svg class="w-full h-full" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
+                <defs>
+                    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+                        <path d="M 40 0 L 0 0 0 40" fill="none" stroke="white" stroke-width="1" />
+                    </pattern>
+                </defs>
+                <rect width="100%" height="100%" fill="url(#grid)" />
+            </svg>
+        </div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <div class="lg:col-span-7 space-y-8 text-center lg:text-right">
+                    <span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-unique-teal/20 text-teal-300 text-sm font-semibold border border-teal-500/30">
+                        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                        بوابتك نحو التوازن النفسي والنجاح المهني
+                    </span>
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight text-white">
+                        من البحث عن وظيفة إلى <span class="text-transparent bg-clip-text bg-gradient-to-l from-teal-300 to-emerald-400">جذب الفرص</span>
+                    </h1>
+                    <p class="text-lg text-slate-300 max-w-2xl leading-relaxed">
+                        كيف تبني حضوراً مهنياً قوياً باستخدام السيرة الذاتية، LinkedIn، والعلامة الشخصية لتصنع قصتك الفريدة وتتغلب على التحديات بكل ثقة؟
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                        <a href="#register" class="px-8 py-4 rounded-xl bg-unique-teal hover:bg-teal-700 text-white font-bold text-center shadow-lg shadow-teal-500/30 transition-all hover:-translate-y-1">
+                            سجل اهتمامك بالورشة
+                        </a>
+                        <a href="#assessment" class="px-8 py-4 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 font-bold text-center transition-all hover:-translate-y-1">
+                            اختبر حضورك المهني مجاناً
+                        </a>
+                    </div>
+                </div>
+                <!-- Visual Card -->
+                <div class="lg:col-span-5 flex justify-center">
+                    <div class="relative w-full max-w-md p-8 rounded-3xl bg-white/5 border border-white/10 backdrop-blur-lg shadow-2xl space-y-6">
+                        <div class="flex items-center gap-4">
+                            <div class="w-16 h-16 rounded-full bg-teal-500/20 flex items-center justify-center text-teal-300 text-2xl border border-teal-500/30">
+                                <i class="fa-solid fa-briefcase"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-lg text-white">النجاح المهني المتكامل</h4>
+                                <p class="text-sm text-slate-400">دمج الصحة النفسية بالتطوير الوظيفي</p>
+                            </div>
+                        </div>
+                        <div class="h-[2px] bg-gradient-to-r from-transparent via-teal-500/50 to-transparent"></div>
+                        <div class="space-y-4">
+                            <div class="flex justify-between items-center text-sm">
+                                <span class="text-slate-300">معدل التوظيف العشوائي</span>
+                                <span class="text-rose-400 font-bold">عالي الجهد - منخفض النتائج</span>
+                            </div>
+                            <div class="w-full bg-slate-800 rounded-full h-2">
+                                <div class="bg-rose-500 h-2 rounded-full w-4/5"></div>
+                            </div>
+                            <div class="flex justify-between items-center text-sm pt-2">
+                                <span class="text-slate-300">معدل جذب الفرص (بعد الورشة)</span>
+                                <span class="text-emerald-400 font-bold">عالي الكفاءة - نتائج مستمرة</span>
+                            </div>
+                            <div class="w-full bg-slate-800 rounded-full h-2">
+                                <div class="bg-emerald-500 h-2 rounded-full w-full animate-pulse"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Founder Section -->
+    <section id="about" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div class="space-y-6">
+                    <div class="inline-block px-3 py-1 rounded-md bg-unique-softTeal text-unique-teal font-bold text-sm">
+                        مؤسس الورشة والمنصة
+                    </div>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900">أخصائية نفسية ومرشدة مهنية تصنع الفارق</h2>
+                    <p class="text-lg text-slate-600 leading-relaxed">
+                        أهلاً بك، أنا <strong>فاطمة عبدالباري حسن</strong>. بخبرة تمتد لأكثر من 8 سنوات في الإرشاد النفسي والتطوير المهني، قمت بتأسيس <strong>UNIQUE</strong> لتكون بوابتك المتكاملة التي تدعمك في التغلب على التحديات بكل ثقة والوصول إلى توازن نفسي مستقر ونجاح مهني متميز.
+                    </p>
+                    <div class="grid grid-cols-2 gap-6 pt-4">
+                        <div class="p-4 rounded-xl bg-slate-50 border border-slate-100 flex items-start gap-3">
+                            <span class="text-2xl text-unique-teal"><i class="fa-solid fa-graduation-cap"></i></span>
+                            <div>
+                                <h5 class="font-bold text-slate-900">أخصائية نفسية</h5>
+                                <p class="text-xs text-slate-500">خبرة في الصحة النفسية المهنية</p>
+                            </div>
+                        </div>
+                        <div class="p-4 rounded-xl bg-slate-50 border border-slate-100 flex items-start gap-3">
+                            <span class="text-2xl text-unique-teal"><i class="fa-solid fa-award"></i></span>
+                            <div>
+                                <h5 class="font-bold text-slate-900">+8 سنوات خبرة</h5>
+                                <p class="text-xs text-slate-500">في بناء الهوية المهنية</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="relative flex justify-center">
+                    <div class="w-full max-w-sm h-96 rounded-2xl bg-gradient-to-tr from-teal-100 to-indigo-100 border-2 border-slate-200/50 p-6 flex flex-col justify-between shadow-xl relative overflow-hidden">
+                        <div class="absolute -top-10 -right-10 w-40 h-40 bg-teal-400/10 rounded-full blur-2xl"></div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-unique-teal font-bold text-lg">UNIQUE FOUNDER</span>
+                            <i class="fa-solid fa-circle-nodes text-slate-400 text-xl"></i>
+                        </div>
+                        <div class="space-y-4">
+                            <div class="text-slate-400 text-6xl">“</div>
+                            <p class="text-slate-700 italic font-semibold leading-relaxed">
+                                "نجاحك المهني لا يجب أن يكون على حساب سلامك النفسي. نسعى في UNIQUE لمساعدتك على تحقيق كليهما."
+                            </p>
+                            <h4 class="font-bold text-slate-900 text-lg">— فاطمة عبدالباري حسن</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- The Problem (Why this workshop) -->
+    <section id="problem" class="py-20 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+                <h2 class="text-3xl font-extrabold text-slate-900 sm:text-4xl">لماذا لا تحصل على فرص رغم كثرة التقديم؟</h2>
+                <p class="text-lg text-slate-600">كثيرون يبذلون جهداً ضخماً ووخسارة هائلة في الطاقة والوقت دون أي نتيجة حقيقية تذكر.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Card 1 -->
+                <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 hover:shadow-md transition-shadow">
+                    <div class="w-12 h-12 rounded-xl bg-rose-50 text-rose-500 flex items-center justify-center text-xl font-bold mb-6">
+                        <i class="fa-solid fa-paper-plane"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3">التقديم العشوائي والنمطي</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        إرسال نفس السيرة الذاتية لمئات الوظائف دون تخصيص أو دراسة متطلبات الشاغر يجعلك مجرد رقم يتم استبعاده آلياً في الفحص الأولي.
+                    </p>
+                </div>
+                <!-- Card 2 -->
+                <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 hover:shadow-md transition-shadow">
+                    <div class="w-12 h-12 rounded-xl bg-amber-50 text-amber-500 flex items-center justify-center text-xl font-bold mb-6">
+                        <i class="fa-solid fa-globe"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3">الاعتماد على منصات التوظيف فقط</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        مواقع التوظيف التقليدية تمثل نسبة ضئيلة فقط من الفرص المتاحة، بينما يتم إسناد الأغلبية الكاسحة عبر شبكات العلاقات والتواصل الفعال.
+                    </p>
+                </div>
+                <!-- Card 3 -->
+                <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 hover:shadow-md transition-shadow">
+                    <div class="w-12 h-12 rounded-xl bg-indigo-50 text-indigo-500 flex items-center justify-center text-xl font-bold mb-6">
+                        <i class="fa-solid fa-eye-slash"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3">تجاهل بناء الهوية المهنية</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        عدم وجود علامة شخصية واضحة على منصات مثل LinkedIn يعني أنك خفي بالنسبة لمسؤولو التوظيف والباحثين عن الكفاءات المميزة.
+                    </p>
+                </div>
+            </div>
+            <div class="mt-12 p-6 rounded-2xl teal-gradient text-white flex flex-col md:flex-row items-center justify-between gap-6">
+                <div>
+                    <h4 class="font-bold text-lg">حان الوقت للانتقال من عقلية "الباحث المستهلك" إلى عقلية "المغناطيس الجاذب" للفرص</h4>
+                    <p class="text-sm text-teal-100">سنتعلم سوياً في ورشتنا العملية كيف تقلب الموازين لصالحك تماماً.</p>
+                </div>
+                <a href="#register" class="px-6 py-3 bg-white text-unique-teal hover:bg-slate-100 font-bold rounded-xl text-sm whitespace-nowrap transition-colors">
+                    سجل الآن بالورشة
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Workshop Modules -->
+    <section id="modules" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+                <span class="text-unique-teal font-extrabold text-sm tracking-wider uppercase">منهجية UNIQUE المتكاملة</span>
+                <h2 class="text-3xl font-extrabold text-slate-900 sm:text-4xl">محاور وخطوات صناعة الفارق</h2>
+                <p class="text-lg text-slate-600">تنقسم ورشة العمل إلى محاور متسلسلة تأخذك خطوة بخطوة من التقييم الذاتي إلى تلقي العروض المهنية المباشرة.</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+                <!-- Sidebar Navigation for Modules -->
+                <div class="lg:col-span-4 space-y-3">
+                    <button onclick="switchTab(1)" id="tab-btn-1" class="w-full text-right p-4 rounded-xl border border-slate-100 bg-teal-50 text-unique-teal font-bold transition-all flex items-center justify-between tab-btn">
+                        <span>المحور الأول: فهم الواقع والفرص</span>
+                        <i class="fa-solid fa-chevron-left text-xs transition-transform"></i>
+                    </button>
+                    <button onclick="switchTab(2)" id="tab-btn-2" class="w-full text-right p-4 rounded-xl border border-slate-100 bg-white hover:bg-slate-50 text-slate-700 font-semibold transition-all flex items-center justify-between tab-btn">
+                        <span>المحور الثاني: اعرف نفسك أولاً</span>
+                        <i class="fa-solid fa-chevron-left text-xs transition-transform"></i>
+                    </button>
+                    <button onclick="switchTab(3)" id="tab-btn-3" class="w-full text-right p-4 rounded-xl border border-slate-100 bg-white hover:bg-slate-50 text-slate-700 font-semibold transition-all flex items-center justify-between tab-btn">
+                        <span>المحور الثالث: السيرة الذاتية الاحترافية</span>
+                        <i class="fa-solid fa-chevron-left text-xs transition-transform"></i>
+                    </button>
+                    <button onclick="switchTab(4)" id="tab-btn-4" class="w-full text-right p-4 rounded-xl border border-slate-100 bg-white hover:bg-slate-50 text-slate-700 font-semibold transition-all flex items-center justify-between tab-btn">
+                        <span>المحور الرابع: أسرار LinkedIn</span>
+                        <i class="fa-solid fa-chevron-left text-xs transition-transform"></i>
+                    </button>
+                    <button onclick="switchTab(5)" id="tab-btn-5" class="w-full text-right p-4 rounded-xl border border-slate-100 bg-white hover:bg-slate-50 text-slate-700 font-semibold transition-all flex items-center justify-between tab-btn">
+                        <span>المحور الخامس: البراند الشخصي</span>
+                        <i class="fa-solid fa-chevron-left text-xs transition-transform"></i>
+                    </button>
+                    <button onclick="switchTab(6)" id="tab-btn-6" class="w-full text-right p-4 rounded-xl border border-slate-100 bg-white hover:bg-slate-50 text-slate-700 font-semibold transition-all flex items-center justify-between tab-btn">
+                        <span>المحور السادس: تجربة عملية ملهمة</span>
+                        <i class="fa-solid fa-chevron-left text-xs transition-transform"></i>
+                    </button>
+                </div>
+
+                <!-- Tab Contents -->
+                <div class="lg:col-span-8 bg-slate-50 p-8 rounded-2xl border border-slate-100 min-h-[350px] flex flex-col justify-between">
+                    <!-- Tab Content 1 -->
+                    <div id="tab-content-1" class="tab-content space-y-6">
+                        <div class="flex items-center gap-4">
+                            <span class="w-12 h-12 rounded-xl teal-gradient text-white flex items-center justify-center text-xl font-bold">1</span>
+                            <h3 class="text-2xl font-bold text-slate-900">لماذا لا نحصل على فرص رغم كثرة التقديم؟</h3>
+                        </div>
+                        <p class="text-slate-600 leading-relaxed">
+                            سنناقش في هذا المحور المفاهيم الخاطئة المحيطة بعملية التقديم للوظائف، وكيف تقع في فخ التقديم العشوائي المدمر لطاقتك، ونوضح الفارق الجوهري والعملي بين البحث النشط والتقليدي عن وظيفة وبين العمل على استقطاب وجذب الفرص مباشرة إليك.
+                        </p>
+                        <ul class="space-y-2 text-slate-700">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-unique-teal"></i> تحليل مفهوم التقديم العشوائي وأضراره النفسية والمهنية.</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-unique-teal"></i> مخاطر إرسال نفس السيرة الذاتية لكل الوظائف.</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-unique-teal"></i> فهم آلية عمل الذكاء الاصطناعي في فرز المتقدمين.</li>
+                        </ul>
+                    </div>
+
+                    <!-- Tab Content 2 -->
+                    <div id="tab-content-2" class="tab-content hidden space-y-6">
+                        <div class="flex items-center gap-4">
+                            <span class="w-12 h-12 rounded-xl teal-gradient text-white flex items-center justify-center text-xl font-bold">2</span>
+                            <h3 class="text-2xl font-bold text-slate-900">اعرف نفسك أولاً قبل أن تبدأ</h3>
+                        </div>
+                        <p class="text-slate-600 leading-relaxed">
+                            الخطوة الأولى في جذب الفرصة الصحيحة تكمن في الوعي الذاتي الدقيق بقدراتك ومهاراتك الحالية، لنتمكن معاً من بناء أساس متين ينطلق من ميزاتك التنافسية.
+                        </p>
+                        <ul class="space-y-2 text-slate-700">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-unique-teal"></i> تحليل المؤهل العلمي وفهم الفجوات المعرفية.</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-unique-teal"></i> تقييم تفصيلي للخبرات السابقة وتصنيفها بدقة.</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-unique-teal"></i> جرد وتصنيف المهارات التقنية والشخصية (Soft Skills & Hard Skills).</li>
+                        </ul>
+                    </div>
+
+                    <!-- Tab Content 3 -->
+                    <div id="tab-content-3" class="tab-content hidden space-y-6">
+                        <div class="flex items-center gap-4">
+                            <span class="w-12 h-12 rounded-xl teal-gradient text-white flex items-center justify-center text-xl font-bold">3</span>
+                            <h3 class="text-2xl font-bold text-slate-900">بناء سيرة ذاتية احترافية قاطعة</h3>
+                        </div>
+                        <p class="text-slate-600 leading-relaxed">
+                            سيرتك الذاتية هي تذكرتك الأولى للمقابلة الشخصية. في هذا المحور سنعمل على صياغتها بطريقة ديناميكية لتستحوذ على اهتمام مسؤول التوظيف في غضون 6 ثوانٍ فقط.
+                        </p>
+                        <ul class="space-y-2 text-slate-700">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-unique-teal"></i> الأقسام الأساسية والإجبارية في السيرة الذاتية الاحترافية.</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-unique-teal"></i> الأخطاء القاتلة والشائعة وكيفية تجنبها نهائياً.</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-unique-teal"></i> صياغة وتخصيص السيرة الذاتية لتتلاءم مع متطلبات كل شاغر وظيفي.</li>
+                        </ul>
+                    </div>
+
+                    <!-- Tab Content 4 -->
+                    <div id="tab-content-4" class="tab-content hidden space-y-6">
+                        <div class="flex items-center gap-4">
+                            <span class="w-12 h-12 rounded-xl teal-gradient text-white flex items-center justify-center text-xl font-bold">4</span>
+                            <h3 class="text-2xl font-bold text-slate-900">LinkedIn ليس مجرد حساب؛ إنه مكتبك الرقمي</h3>
+                        </div>
+                        <p class="text-slate-600 leading-relaxed">
+                            سنتعلم كيف نتحول من مستخدم سلبي إلى لاعب أساسي نشط في منصة المهنيين الأولى عالمياً، مما يجعلك واجهة مثيرة وموثوقة لمسؤولو التوظيف.
+                        </p>
+                        <ul class="space-y-2 text-slate-700">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-unique-teal"></i> تشريح كامل لعناصر الملف الاحترافي الجاذب.</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-unique-teal"></i> صياغة العنوان المهني (Headline) والنبذة التعريفية باحترافية.</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-unique-teal"></i> استراتيجيات بناء شبكة علاقات قوية مع رواد مجالك.</li>
+                        </ul>
+                    </div>
+
+                    <!-- Tab Content 5 -->
+                    <div id="tab-content-5" class="tab-content hidden space-y-6">
+                        <div class="flex items-center gap-4">
+                            <span class="w-12 h-12 rounded-xl teal-gradient text-white flex items-center justify-center text-xl font-bold">5</span>
+                            <h3 class="text-2xl font-bold text-slate-900">البراند الشخصي وصناعة الفرص</h3>
+                        </div>
+                        <p class="text-slate-600 leading-relaxed">
+                            امتلاك هوية شخصية هو ما يميزك عن آلاف المرشحين الآخرين الذين يمتلكون نفس مهاراتك الفنية بالضبط. هنا نصنع التميز الحقيقي.
+                        </p>
+                        <ul class="space-y-2 text-slate-700">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-unique-teal"></i> ما هي العلامة الشخصية وكيف تنعكس إيجابياً على توازنك النفسي؟</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-unique-teal"></i> استراتيجيات كتابة وصناعة المحتوى المهني المؤثر.</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-unique-teal"></i> التفاعل الذكي والظهور المتوازن داخل المجتمع المهني الرقمي.</li>
+                        </ul>
+                    </div>
+
+                    <!-- Tab Content 6 -->
+                    <div id="tab-content-6" class="tab-content hidden space-y-6">
+                        <div class="flex items-center gap-4">
+                            <span class="w-12 h-12 rounded-xl teal-gradient text-white flex items-center justify-center text-xl font-bold">6</span>
+                            <h3 class="text-2xl font-bold text-slate-900">تجربة عملية: من البداية حتى تأسيس UNIQUE</h3>
+                        </div>
+                        <p class="text-slate-600 leading-relaxed">
+                            سأشاركك بكل مصداقية رحلتي وتجربتي الشخصية في الانتقال من باحثة عن فرصة، إلى تحسين وتطوير أدواتي وسيرتي وحسابي المهني، لتبدأ فرص العمل والدعوات للمؤتمرات والتعاونات بالتدفق مباشرة دون تقديم، مما أثمر عن تأسيس مشروعي المهني الرائد UNIQUE.
+                        </p>
+                        <ul class="space-y-2 text-slate-700">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-unique-teal"></i> دراسة حالة واقعية للأخطاء وكيفية تصحيحها بالنتائج الرقمية.</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-unique-teal"></i> كيف تحفز مسؤولو التوظيف على إرسال عروض مباشرة لك.</li>
+                        </ul>
+                    </div>
+
+                    <div class="mt-8 pt-6 border-t border-slate-200/60 flex items-center justify-between">
+                        <span class="text-xs text-slate-400">محتوى متميز وشامل</span>
+                        <a href="#register" class="text-sm font-bold text-unique-teal hover:text-teal-700 flex items-center gap-1 transition-colors">
+                            <span>احجز مقعدك لتتعلم هذا المحور</span>
+                            <i class="fa-solid fa-arrow-left"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Section: Brand Assessment Magnet Gauge -->
+    <section id="assessment" class="py-20 bg-slate-900 text-white relative">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center space-y-4 mb-12">
+                <span class="text-amber-400 font-bold text-sm tracking-widest uppercase">تفاعل مباشر</span>
+                <h2 class="text-3xl font-extrabold sm:text-4xl">مقياس قوة جاذبيتك المهنية الفوري</h2>
+                <p class="text-slate-300">أجب عن 5 أسئلة سريعة لتعرف مدى قوة حضورك في سوق العمل وجذبك للفرص حالياً!</p>
+            </div>
+
+            <div class="bg-slate-800 rounded-3xl p-8 border border-slate-700 shadow-2xl relative">
+                <!-- Question Block -->
+                <div id="quiz-container" class="space-y-8">
+                    <!-- Progress bar -->
+                    <div class="w-full bg-slate-700 rounded-full h-1.5 overflow-hidden">
+                        <div id="quiz-progress" class="bg-unique-teal h-1.5 transition-all duration-300" style="width: 20%;"></div>
+                    </div>
+
+                    <!-- Slide 1 -->
+                    <div class="quiz-slide" data-slide="1">
+                        <h3 class="text-xl font-bold mb-6 text-teal-300">1. كم مرة تقوم بتعديل سيرتك الذاتية لتناسب الشاغر المحدد قبل إرسالها؟</h3>
+                        <div class="grid grid-cols-1 gap-3">
+                            <button onclick="nextQuestion(1, 0)" class="w-full text-right p-4 rounded-xl bg-slate-700 hover:bg-slate-600 hover:border-teal-500 border border-transparent transition-all flex items-center justify-between">
+                                <span>أرسلها دائماً كما هي دون أي تغيير</span>
+                                <i class="fa-regular fa-circle text-slate-400"></i>
+                            </button>
+                            <button onclick="nextQuestion(1, 5)" class="w-full text-right p-4 rounded-xl bg-slate-700 hover:bg-slate-600 hover:border-teal-500 border border-transparent transition-all flex items-center justify-between">
+                                <span>أغير أجزاء بسيطة جداً فقط</span>
+                                <i class="fa-regular fa-circle text-slate-400"></i>
+                            </button>
+                            <button onclick="nextQuestion(1, 10)" class="w-full text-right p-4 rounded-xl bg-slate-700 hover:bg-slate-600 hover:border-teal-500 border border-transparent transition-all flex items-center justify-between">
+                                <span>أقوم بتفصيلها وتخصيص الكلمات المفتاحية بالكامل لكل وظيفة</span>
+                                <i class="fa-regular fa-circle text-slate-400"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Slide 2 -->
+                    <div class="quiz-slide hidden" data-slide="2">
+                        <h3 class="text-xl font-bold mb-6 text-teal-300">2. كيف تصف ملفك الشخصي الحالي على منصة LinkedIn؟</h3>
+                        <div class="grid grid-cols-1 gap-3">
+                            <button onclick="nextQuestion(2, 0)" class="w-full text-right p-4 rounded-xl bg-slate-700 hover:bg-slate-600 hover:border-teal-500 border border-transparent transition-all flex items-center justify-between">
+                                <span>ليس لدي حساب، أو الحساب مهجور كلياً</span>
+                                <i class="fa-regular fa-circle text-slate-400"></i>
+                            </button>
+                            <button onclick="nextQuestion(2, 5)" class="w-full text-right p-4 rounded-xl bg-slate-700 hover:bg-slate-600 hover:border-teal-500 border border-transparent transition-all flex items-center justify-between">
+                                <span>لدي حساب عادي ولكن لا أنشر فيه وليس جذاباً بما يكفي</span>
+                                <i class="fa-regular fa-circle text-slate-400"></i>
+                            </button>
+                            <button onclick="nextQuestion(2, 10)" class="w-full text-right p-4 rounded-xl bg-slate-700 hover:bg-slate-600 hover:border-teal-500 border border-transparent transition-all flex items-center justify-between">
+                                <span>ملفي مكتمل باحترافية، عنواني واضح، ومتفاعل باستمرار</span>
+                                <i class="fa-regular fa-circle text-slate-400"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Slide 3 -->
+                    <div class="quiz-slide hidden" data-slide="3">
+                        <h3 class="text-xl font-bold mb-6 text-teal-300">3. هل تقوم بكتابة محتوى مهني أو مشاركة خبراتك المهنية على منصات التواصل؟</h3>
+                        <div class="grid grid-cols-1 gap-3">
+                            <button onclick="nextQuestion(3, 0)" class="w-full text-right p-4 rounded-xl bg-slate-700 hover:bg-slate-600 hover:border-teal-500 border border-transparent transition-all flex items-center justify-between">
+                                <span>لا أبداً، فقط أتابع بصمت</span>
+                                <i class="fa-regular fa-circle text-slate-400"></i>
+                            </button>
+                            <button onclick="nextQuestion(3, 5)" class="w-full text-right p-4 rounded-xl bg-slate-700 hover:bg-slate-600 hover:border-teal-500 border border-transparent transition-all flex items-center justify-between">
+                                <span>أشارك منشورات الآخرين وتبريكاتهم أحياناً</span>
+                                <i class="fa-regular fa-circle text-slate-400"></i>
+                            </button>
+                            <button onclick="nextQuestion(3, 10)" class="w-full text-right p-4 rounded-xl bg-slate-700 hover:bg-slate-600 hover:border-teal-500 border border-transparent transition-all flex items-center justify-between">
+                                <span>أكتب محتوى أصيل يعكس معرفتي العميقة وخبراتي وتجاربي</span>
+                                <i class="fa-regular fa-circle text-slate-400"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Slide 4 -->
+                    <div class="quiz-slide hidden" data-slide="4">
+                        <h3 class="text-xl font-bold mb-6 text-teal-300">4. كيف تحصل عادةً على فرص العمل أو العروض والمقابلات الشاغرة؟</h3>
+                        <div class="grid grid-cols-1 gap-3">
+                            <button onclick="nextQuestion(4, 0)" class="w-full text-right p-4 rounded-xl bg-slate-700 hover:bg-slate-600 hover:border-teal-500 border border-transparent transition-all flex items-center justify-between">
+                                <span>فقط عبر التقدم للوظائف الشاغرة المعلنة ومواقع التوظيف</span>
+                                <i class="fa-regular fa-circle text-slate-400"></i>
+                            </button>
+                            <button onclick="nextQuestion(4, 5)" class="w-full text-right p-4 rounded-xl bg-slate-700 hover:bg-slate-600 hover:border-teal-500 border border-transparent transition-all flex items-center justify-between">
+                                <span>أحياناً يقترحني أصدقاء مقربين للفرص</span>
+                                <i class="fa-regular fa-circle text-slate-400"></i>
+                            </button>
+                            <button onclick="nextQuestion(4, 10)" class="w-full text-right p-4 rounded-xl bg-slate-700 hover:bg-slate-600 hover:border-teal-500 border border-transparent transition-all flex items-center justify-between">
+                                <span>يتواصل معي مسؤولو توظيف وعملاء مباشرة بناءً على ملفي وحضوري</span>
+                                <i class="fa-regular fa-circle text-slate-400"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Slide 5 -->
+                    <div class="quiz-slide hidden" data-slide="5">
+                        <h3 class="text-xl font-bold mb-6 text-teal-300">5. ما مدى انسجام حالتك النفسية مع مسيرتك وبحثك الحالي عن عمل؟</h3>
+                        <div class="grid grid-cols-1 gap-3">
+                            <button onclick="calculateScore(0)" class="w-full text-right p-4 rounded-xl bg-slate-700 hover:bg-slate-600 hover:border-teal-500 border border-transparent transition-all flex items-center justify-between">
+                                <span>أشعر بإحباط شديد وتشتت وضغط نفسي مستمر يفقدني الرغبة</span>
+                                <i class="fa-regular fa-circle text-slate-400"></i>
+                            </button>
+                            <button onclick="calculateScore(5)" class="w-full text-right p-4 rounded-xl bg-slate-700 hover:bg-slate-600 hover:border-teal-500 border border-transparent transition-all flex items-center justify-between">
+                                <span>أشعر ببعض التوتر والضغط، لكني أواصل البحث والعمل قدر المستطاع</span>
+                                <i class="fa-regular fa-circle text-slate-400"></i>
+                            </button>
+                            <button onclick="calculateScore(10)" class="w-full text-right p-4 rounded-xl bg-slate-700 hover:bg-slate-600 hover:border-teal-500 border border-transparent transition-all flex items-center justify-between">
+                                <span>لدي توازن وثقة في خطواتي وأعلم كيف أفصل تقديري لذاتي عن وضعي الوظيفي</span>
+                                <i class="fa-regular fa-circle text-slate-400"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Result Block -->
+                <div id="quiz-result" class="hidden text-center space-y-6">
+                    <div class="inline-flex items-center justify-center w-24 h-24 rounded-full bg-teal-500/10 border-2 border-teal-500 text-teal-400 text-4xl mb-2">
+                        <i class="fa-solid fa-magnet animate-bounce"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold">مستوى قوة الجذب المهني لديك هو: <span id="score-val" class="text-teal-400">0</span>%</h3>
+                    
+                    <div id="feedback-low" class="hidden text-slate-300 space-y-4 max-w-lg mx-auto">
+                        <p class="leading-relaxed text-sm">
+                            أنت تتبع الأسلوب التقليدي وتستنزف قدراً هائلاً من طاقتك دون نتائج تُذكر، وقد يؤثر هذا التشتت سلباً على سلامك وتوازنك النفسي. الورشة صُممت خصيصاً لمساعدتك على تجاوز هذه العقبة وبناء حضور مهني متزن يستقطب الفرص.
+                        </p>
+                    </div>
+                    <div id="feedback-medium" class="hidden text-slate-300 space-y-4 max-w-lg mx-auto">
+                        <p class="leading-relaxed text-sm">
+                            لديك أساسيات جيدة لكنها غير مستغلة بالشكل المثالي! ينقصك تفعيل الهوية والبراند المهني والانتشار الذكي على منصات التوظيف لصناعة الفرص بشكل متواصل دون الاعتماد على الحظ والتقديم العشوائي.
+                        </p>
+                    </div>
+                    <div id="feedback-high" class="hidden text-slate-300 space-y-4 max-w-lg mx-auto">
+                        <p class="leading-relaxed text-sm">
+                            رائع جداً! أنت تفهم كيف تدير حضورك المهني وتتمتع بتوازن وثقة ممتازة. ورشة UNIQUE ستوفر لك فرصة للانطلاق لمستوى متقدم جداً ورفع كفاءة تواصلك وبناء مشاريع مستقلة خاصة بك.
+                        </p>
+                    </div>
+
+                    <div class="pt-4 flex flex-col sm:flex-row justify-center gap-4">
+                        <button onclick="resetQuiz()" class="px-6 py-3 rounded-xl bg-slate-700 hover:bg-slate-600 text-white font-bold text-sm transition-colors">
+                            إعادة الاختبار
+                        </button>
+                        <a href="#register" class="px-6 py-3 rounded-xl bg-unique-teal hover:bg-teal-700 text-white font-bold text-sm shadow-lg shadow-teal-500/20 transition-all hover:-translate-y-0.5">
+                            طور مهارتك وحضورك الآن بالورشة
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Success Journey Timeline (Axis 6) -->
+    <section id="journey" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+                <span class="text-unique-teal font-extrabold text-sm tracking-wider uppercase">قصة نجاح ملهمة</span>
+                <h2 class="text-3xl font-extrabold text-slate-900 sm:text-4xl">من التقديم التقليدي إلى الدعوات والمؤتمرات</h2>
+                <p class="text-lg text-slate-600">كيف غيرت الأستاذة فاطمة عبدالباري مسار حياتها عبر تطبيق ذات الخطوات والأساليب التي تدرسها في UNIQUE.</p>
+            </div>
+
+            <div class="relative border-r-2 border-slate-200 mr-4 sm:mr-8 max-w-3xl mx-auto space-y-12">
+                <!-- Step 1 -->
+                <div class="relative pr-8">
+                    <span class="absolute -right-[11px] top-0.5 w-5 h-5 rounded-full bg-slate-300 border-4 border-white"></span>
+                    <h4 class="text-xl font-bold text-slate-900 mb-2">البداية الصعبة والبحث التقليدي</h4>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        كأي خريجة وباحثة عن العمل، بدأت فاطمة بإرسال عشرات السير الذاتية يومياً وبشكل تقليدي لمختلف الأماكن، مما استنزف طاقتها واستهلك وقتها دون الحصول على الفرص والتقدير المناسب.
+                    </p>
+                </div>
+                <!-- Step 2 -->
+                <div class="relative pr-8">
+                    <span class="absolute -right-[11px] top-0.5 w-5 h-5 rounded-full bg-unique-teal border-4 border-white"></span>
+                    <h4 class="text-xl font-bold text-slate-900 mb-2">الوعي بالذات وتطوير السيرة الذاتية ديمغرافياً</h4>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        مرحلة التقييم الحقيقي؛ حيث قامت الأستاذة فاطمة بتحليل المؤهلات والخبرات وبناء وتفصيل سيرة ذاتية تفاعلية جذابة قادرة على تجاوز برمجيات الفرز بذكاء.
+                    </p>
+                </div>
+                <!-- Step 3 -->
+                <div class="relative pr-8">
+                    <span class="absolute -right-[11px] top-0.5 w-5 h-5 rounded-full bg-unique-teal border-4 border-white"></span>
+                    <h4 class="text-xl font-bold text-slate-900 mb-2">ثورة LinkedIn والبراند الشخصي</h4>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        بناء حساب تفاعلي، صياغة عنوان مهني جذاب، والمشاركة بوعي في المجتمع المهني، وهو ما حوّل حسابها إلى مغناطيس للفرص وجذب انتباه مسؤولي التوظيف.
+                    </p>
+                </div>
+                <!-- Step 4 -->
+                <div class="relative pr-8">
+                    <span class="absolute -right-[11px] top-0.5 w-5 h-5 rounded-full bg-amber-500 border-4 border-white"></span>
+                    <h4 class="text-xl font-bold text-slate-900 mb-2">تأسيس UNIQUE وتلقي الفرص المباشرة</h4>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        تتويج الرحلة بإطلاق مشروع UNIQUE لمساعدة الجميع مهنياً ونفسياً، وتلقي عروض عمل مباشرة، ودعوات للتعاون والمشاركة في المؤتمرات الدولية دون عناء البحث التقليدي.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Registration / Lead Generation form -->
+    <section id="register" class="py-20 bg-slate-50 relative overflow-hidden">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="bg-white rounded-3xl p-8 sm:p-12 border border-slate-100 shadow-xl space-y-8">
+                <div class="text-center space-y-4">
+                    <h2 class="text-3xl font-extrabold text-slate-900">سجل اهتمامك الآن بالنسخة القادمة</h2>
+                    <p class="text-slate-600">املأ البيانات أدناه لحجز مقعدك أو طلب استشارة أولية، وسيتواصل معك فريق UNIQUE للترتيب وموافاتك بالتفاصيل والأسعار المخفضة.</p>
+                </div>
+
+                <form id="contact-form" onsubmit="handleFormSubmit(event)" class="space-y-6">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        <div class="space-y-2">
+                            <label class="block text-sm font-semibold text-slate-700">الاسم الكامل *</label>
+                            <input type="text" required id="form-name" placeholder="مثال: أحمد محمد علي" class="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 focus:outline-none focus:ring-2 focus:ring-unique-teal/50 focus:border-unique-teal transition-all text-sm">
+                        </div>
+                        <div class="space-y-2">
+                            <label class="block text-sm font-semibold text-slate-700">رقم الهاتف (الواتساب) *</label>
+                            <input type="tel" required id="form-phone" placeholder="مثال: 00201012345678" class="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 focus:outline-none focus:ring-2 focus:ring-unique-teal/50 focus:border-unique-teal transition-all text-sm">
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        <div class="space-y-2">
+                            <label class="block text-sm font-semibold text-slate-700">البريد الإلكتروني *</label>
+                            <input type="email" required id="form-email" placeholder="مثال: client@example.com" class="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 focus:outline-none focus:ring-2 focus:ring-unique-teal/50 focus:border-unique-teal transition-all text-sm">
+                        </div>
+                        <div class="space-y-2">
+                            <label class="block text-sm font-semibold text-slate-700">الخدمة المطلوبة *</label>
+                            <select id="form-service" class="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 focus:outline-none focus:ring-2 focus:ring-unique-teal/50 focus:border-unique-teal transition-all text-sm">
+                                <option value="workshop">حضور ورشة "من البحث عن وظيفة إلى جذب الفرص"</option>
+                                <option value="consultation">جلسة استشارة مهنية ونفسية خاصة</option>
+                                <option value="cv-review">مراجعة وتحسين السيرة الذاتية و LinkedIn</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="space-y-2">
+                        <label class="block text-sm font-semibold text-slate-700">حدثنا عن أكبر تحدي مهني يواجهك حالياً</label>
+                        <textarea id="form-message" rows="4" placeholder="اكتب هنا باختصار لنتمكن من فهم حالتك بشكل أفضل..." class="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 focus:outline-none focus:ring-2 focus:ring-unique-teal/50 focus:border-unique-teal transition-all text-sm"></textarea>
+                    </div>
+
+                    <button type="submit" id="submit-btn" class="w-full py-4 rounded-xl teal-gradient hover:opacity-95 text-white font-bold shadow-lg shadow-teal-500/20 transition-all hover:-translate-y-0.5 flex justify-center items-center gap-2">
+                        <i id="submit-spinner" class="fa-solid fa-spinner animate-spin hidden"></i>
+                        <span id="submit-text">إرسال الطلب وحجز المقعد</span>
+                    </button>
+                </form>
+
+                <!-- Feedback Message Container -->
+                <div id="form-feedback" class="hidden p-6 rounded-xl bg-emerald-50 border border-emerald-200 text-emerald-800 text-center text-sm font-semibold space-y-2">
+                    <p class="text-base">🎉 تم استقبال طلبك وحفظه بنجاح!</p>
+                    <p class="font-normal text-slate-600">يسعدنا اهتمامك وسيقوم منسق الدعم من مجموعة UNIQUE بالتواصل معك عبر واتساب خلال 24 ساعة كحد أقصى.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Admin Panel Control Panel (Optional / Toggleable) -->
+    <section class="py-10 bg-slate-100 border-t border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <button onclick="toggleAdminPanel()" class="px-5 py-2 rounded-lg bg-slate-200 hover:bg-slate-300 text-slate-700 text-xs font-semibold transition-all">
+                <i class="fa-solid fa-lock mr-1"></i> لوحة الإدارة لمشاهدة المتقدمين (خاص بـ UNIQUE)
+            </button>
+
+            <div id="admin-panel" class="hidden mt-8 bg-white p-6 rounded-2xl border border-slate-200 text-right space-y-6">
+                <div class="flex flex-col sm:flex-row items-center justify-between gap-4 border-b border-slate-100 pb-4">
+                    <h3 class="text-lg font-bold text-slate-900 flex items-center gap-2">
+                        <i class="fa-solid fa-database text-unique-teal"></i> لوحة تحكم الطلبات المستلمة
+                    </h3>
+                    <div class="flex flex-wrap items-center gap-3 justify-center md:justify-end">
+                        <button onclick="exportToExcel()" class="bg-emerald-600 text-white px-3 py-1.5 rounded-lg text-xs font-bold hover:bg-emerald-700 transition-colors flex items-center gap-1.5">
+                            <i class="fa-solid fa-file-excel"></i> تحميل كملف Excel
+                        </button>
+                        <div class="flex items-center gap-2">
+                            <input type="password" id="admin-pass" placeholder="أدخل كلمة المرور" class="px-3 py-1.5 border border-slate-200 rounded-lg text-xs focus:outline-none">
+                            <button onclick="unlockAdmin()" class="px-4 py-1.5 rounded-lg bg-unique-teal text-white text-xs font-bold hover:bg-teal-700 transition-colors">
+                                فتح اللوحة
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="admin-content" class="hidden space-y-4">
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-sm text-right text-slate-500">
+                            <thead class="text-xs text-slate-700 uppercase bg-slate-50">
+                                <tr>
+                                    <th class="px-4 py-3">الاسم</th>
+                                    <th class="px-4 py-3">رقم الهاتف</th>
+                                    <th class="px-4 py-3">البريد الإلكتروني</th>
+                                    <th class="px-4 py-3">الخدمة</th>
+                                    <th class="px-4 py-3">التحدي المهني</th>
+                                    <th class="px-4 py-3">المصدر</th>
+                                </tr>
+                            </thead>
+                            <tbody id="registrations-list">
+                                <tr>
+                                    <td colspan="6" class="text-center py-4 text-slate-400">لا توجد طلبات مسجلة حالياً أو يرجى فتح اللوحة أولاً.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-white py-12 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-center text-center md:text-right">
+                <div class="space-y-3">
+                    <div class="flex items-center gap-3 justify-center md:justify-start">
+                        <div class="w-10 h-10 rounded-xl teal-gradient flex items-center justify-center text-white font-extrabold text-lg">
+                            U
+                        </div>
+                        <span class="text-lg font-extrabold text-white tracking-wider">UNIQUE GROUP</span>
+                    </div>
+                    <p class="text-xs text-slate-400 max-w-xs leading-relaxed">
+                        نهدف دائماً إلى تحقيق التوازن النفسي المستقر والنجاح المهني المتميز لتصنع قصتك الفريدة وتتغلب على التحديات بكل ثقة.
+                    </p>
+                </div>
+                <div class="flex justify-center space-x-reverse space-x-6">
+                    <a href="https://linkedin.com" target="_blank" class="w-10 h-10 rounded-full bg-slate-800 hover:bg-unique-teal flex items-center justify-center transition-colors">
+                        <i class="fa-brands fa-linkedin-in"></i>
+                    </a>
+                    <a href="https://twitter.com" target="_blank" class="w-10 h-10 rounded-full bg-slate-800 hover:bg-unique-teal flex items-center justify-center transition-colors">
+                        <i class="fa-brands fa-twitter"></i>
+                    </a>
+                    <a href="https://instagram.com" target="_blank" class="w-10 h-10 rounded-full bg-slate-800 hover:bg-unique-teal flex items-center justify-center transition-colors">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+                </div>
+                <div class="text-xs text-slate-500">
+                    &copy; 2026 مجموعة UNIQUE. جميع الحقوق محفوظة لـ فاطمة عبدالباري حسن.
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Toast Notification Container -->
+    <div id="toast-container" class="fixed top-5 left-5 z-[9999] flex flex-col gap-3 max-w-sm w-full pointer-events-none"></div>
+
+    <!-- Interactive JS Core -->
+    <script>
+        // إعدادات Firebase الحقيقية والمحدثة لمشروعكِ
+        const firebaseConfig = {
+            apiKey: "AIzaSyDzJFY54c0BdKmHWA5vUBxTA-wmTNNegNA",
+            authDomain: "unique-group-f8b37.firebaseapp.com",
+            databaseURL: "https://unique-group-f8b37-default-rtdb.firebaseio.com",
+            projectId: "unique-group-f8b37",
+            storageBucket: "unique-group-f8b37.firebasestorage.app",
+            messagingSenderId: "194613996624",
+            appId: "1:194613996624:web:81287dbda46db7f44b7555",
+            measurementId: "G-HH3JMVZ19J"
+        };
+
+        const appId = typeof __app_id !== 'undefined' ? __app_id : 'unique-group-app';
+        let db = null;
+        let auth = null;
+        let currentUser = null;
+        let isFirebaseActive = false;
+
+        // تهيئة الخدمات السحابية بمجرد تحميل الصفحة
+        window.addEventListener('load', async () => {
+            try {
+                let activeConfig = firebaseConfig;
+                if (typeof __firebase_config !== 'undefined' && __firebase_config) {
+                    try {
+                        activeConfig = JSON.parse(__firebase_config);
+                    } catch(e) {}
+                }
+
+                firebase.initializeApp(activeConfig);
+                auth = firebase.auth();
+                db = firebase.firestore();
+
+                // تفعيل عملية تسجيل الدخول كشرط أساسي لتبادل البيانات بأمان (RULE 3)
+                if (typeof __initial_auth_token !== 'undefined' && __initial_auth_token) {
+                    await auth.signInWithCustomToken(__initial_auth_token);
+                } else {
+                    await auth.signInAnonymously();
+                }
+
+                currentUser = auth.currentUser;
+                isFirebaseActive = true;
+                console.log("Firebase initialized successfully with Project ID: " + activeConfig.projectId);
+            } catch (err) {
+                console.error("Firebase setup failed. Page will fall back to LocalStorage backup.", err);
+            }
+        });
+
+        // دالة لعرض رسائل منبثقة جميلة بديلة عن تنبيهات المتصفح التقليدية alert
+        function showToast(message, type = 'info') {
+            const container = document.getElementById('toast-container');
+            const toast = document.createElement('div');
+            toast.className = `p-4 rounded-xl text-white font-semibold text-sm shadow-xl transition-all duration-300 transform translate-x-12 opacity-0 pointer-events-auto flex items-center gap-3 ${
+                type === 'success' ? 'bg-emerald-600' : type === 'error' ? 'bg-rose-600' : 'bg-unique-teal'
+            }`;
+            
+            const icon = type === 'success' ? 'fa-circle-check' : type === 'error' ? 'fa-circle-exclamation' : 'fa-circle-info';
+            toast.innerHTML = `<i class="fa-solid ${icon} text-lg"></i> <span>${message}</span>`;
+            
+            container.appendChild(toast);
+            
+            // Animation In
+            setTimeout(() => {
+                toast.classList.remove('translate-x-12', 'opacity-0');
+            }, 10);
+
+            // Hide and remove
+            setTimeout(() => {
+                toast.classList.add('translate-x-12', 'opacity-0');
+                setTimeout(() => {
+                    toast.remove();
+                }, 300);
+            }, 3500);
+        }
+
+        // دالة التنقل بين المحاور تفاعلياً
+        function switchTab(tabIndex) {
+            const contents = document.querySelectorAll('.tab-content');
+            contents.forEach(content => content.classList.add('hidden'));
+
+            document.getElementById(`tab-content-${tabIndex}`).classList.remove('hidden');
+
+            const buttons = document.querySelectorAll('.tab-btn');
+            buttons.forEach(btn => {
+                btn.classList.remove('bg-teal-50', 'text-unique-teal', 'font-bold');
+                btn.classList.add('bg-white', 'text-slate-700', 'font-semibold');
+            });
+
+            const activeBtn = document.getElementById(`tab-btn-${tabIndex}`);
+            activeBtn.classList.remove('bg-white', 'text-slate-700', 'font-semibold');
+            activeBtn.classList.add('bg-teal-50', 'text-unique-teal', 'font-bold');
+        }
+
+        let score = 0;
+        function nextQuestion(currentStep, valueToAdd) {
+            score += valueToAdd;
+            
+            const currentSlide = document.querySelector(`.quiz-slide[data-slide="${currentStep}"]`);
+            currentSlide.classList.add('hidden');
+
+            const nextStep = currentStep + 1;
+            const nextSlide = document.querySelector(`.quiz-slide[data-slide="${nextStep}"]`);
+            
+            if (nextSlide) {
+                nextSlide.classList.remove('hidden');
+                const percentage = (nextStep / 5) * 100;
+                document.getElementById('quiz-progress').style.width = `${percentage}%`;
+            }
+        }
+
+        function calculateScore(lastValueToAdd) {
+            score += lastValueToAdd;
+            document.querySelector(`.quiz-slide[data-slide="5"]`).classList.add('hidden');
+
+            const resultBox = document.getElementById('quiz-result');
+            resultBox.classList.remove('hidden');
+
+            const percentage = Math.round((score / 50) * 100);
+            document.getElementById('score-val').textContent = percentage;
+
+            if (percentage <= 40) {
+                document.getElementById('feedback-low').classList.remove('hidden');
+            } else if (percentage <= 80) {
+                document.getElementById('feedback-medium').classList.remove('hidden');
+            } else {
+                document.getElementById('feedback-high').classList.remove('hidden');
+            }
+        }
+
+        function resetQuiz() {
+            score = 0;
+            document.getElementById('quiz-result').classList.add('hidden');
+            document.getElementById('feedback-low').classList.add('hidden');
+            document.getElementById('feedback-medium').classList.add('hidden');
+            document.getElementById('feedback-high').classList.add('hidden');
+
+            document.getElementById('quiz-progress').style.width = `20%`;
+
+            const slides = document.querySelectorAll('.quiz-slide');
+            slides.forEach(slide => slide.classList.add('hidden'));
+            document.querySelector(`.quiz-slide[data-slide="1"]`).classList.remove('hidden');
+        }
+
+        async function handleFormSubmit(event) {
+            event.preventDefault();
+            
+            const submitBtn = document.getElementById('submit-btn');
+            const spinner = document.getElementById('submit-spinner');
+            const submitText = document.getElementById('submit-text');
+
+            submitBtn.disabled = true;
+            spinner.classList.remove('hidden');
+            submitText.textContent = "جاري الحفظ والرفع السحابي...";
+
+            const name = document.getElementById('form-name').value;
+            const phone = document.getElementById('form-phone').value;
+            const email = document.getElementById('form-email').value;
+            const service = document.getElementById('form-service').value;
+            const message = document.getElementById('form-message').value;
+
+            const registrationData = {
+                name: name,
+                phone: phone,
+                email: email,
+                service: service,
+                message: message,
+                source: isFirebaseActive ? "سحابي (Firebase)" : "محلي (LocalStorage)",
+                timestamp: new Date().toISOString()
+            };
+
+            // حفظ نسخة احتياطية في ذاكرة المتصفح
+            let localList = JSON.parse(localStorage.getItem('unique_registrations')) || [];
+            localList.push(registrationData);
+            localStorage.setItem('unique_registrations', JSON.stringify(localList));
+
+            // الرفع والحفظ سحابياً في الـ Firestore (RULE 1 Strict Path)
+            if (isFirebaseActive && db && currentUser) {
+                try {
+                    const collectionPath = `/artifacts/${appId}/public/data/registrations`;
+                    await db.collection(collectionPath).add({
+                        ...registrationData,
+                        timestamp: firebase.firestore.FieldValue.serverTimestamp()
+                    });
+                    showToast("تم استقبال طلبك ورفعه سحابياً بنجاح!", "success");
+                } catch (error) {
+                    console.error("Firestore write failed. Retained local backup.", error);
+                    showToast("حدثت مشكلة في الرفع السحابي، تم الحفظ محلياً على جهازكِ مؤقتاً.", "info");
+                }
+            } else {
+                showToast("تم الحفظ بنجاح (وضع عدم الاتصال بالسحابة).", "success");
+            }
+
+            // إخفاء النموذج وعرض رسالة النجاح في الواجهة
+            document.getElementById('contact-form').classList.add('hidden');
+            document.getElementById('form-feedback').classList.remove('hidden');
+        }
+
+        function toggleAdminPanel() {
+            const adminPanel = document.getElementById('admin-panel');
+            adminPanel.classList.toggle('hidden');
+        }
+
+        function unlockAdmin() {
+            const password = document.getElementById('admin-pass').value;
+            if (password === "unique2026") {
+                document.getElementById('admin-content').classList.remove('hidden');
+                loadRegistrations();
+                showToast("تم تفعيل صلاحيات الإدارة واستيراد البيانات بنجاح.", "success");
+            } else {
+                showToast("كلمة المرور خاطئة! يرجى إدخال الكلمة الصحيحة.", "error");
+            }
+        }
+
+        // استيراد وعرض البيانات الحية والاحتياطية للطلبات (RULE 1 & RULE 2)
+        async function loadRegistrations() {
+            const listContainer = document.getElementById('registrations-list');
+            listContainer.innerHTML = `<tr><td colspan="6" class="text-center py-4 text-unique-teal animate-pulse">جاري استيراد الطلبات الحقيقية من السحابة...</td></tr>`;
+
+            let combinedList = [];
+
+            // جلب البيانات من السحابة في Firestore (RULE 1 Strict Path)
+            if (isFirebaseActive && db && currentUser) {
+                try {
+                    const collectionPath = `/artifacts/${appId}/public/data/registrations`;
+                    const querySnapshot = await db.collection(collectionPath).get();
+                    querySnapshot.forEach((doc) => {
+                        const cloudData = doc.data();
+                        combinedList.push({
+                            name: cloudData.name,
+                            phone: cloudData.phone,
+                            email: cloudData.email,
+                            service: cloudData.service,
+                            message: cloudData.message,
+                            source: "سحابي (Firebase)"
+                        });
+                    });
+                } catch (err) {
+                    console.error("Firestore read error. Relying on LocalStorage.", err);
+                }
+            }
+
+            // دمج البيانات الاحتياطية الفريدة من ذاكرة المتصفح للابتوب
+            const localList = JSON.parse(localStorage.getItem('unique_registrations')) || [];
+            localList.forEach(item => {
+                if (!combinedList.some(c => c.phone === item.phone && c.name === item.name)) {
+                    combinedList.push(item);
+                }
+            });
+
+            if (combinedList.length === 0) {
+                listContainer.innerHTML = `<tr><td colspan="6" class="text-center py-4 text-slate-400">لا توجد طلبات مسجلة بعد في قاعدة البيانات.</td></tr>`;
+                return;
+            }
+
+            let html = '';
+            combinedList.forEach((data) => {
+                html += `
+                    <tr class="bg-white border-b hover:bg-slate-50 transition-colors">
+                        <td class="px-4 py-3 font-semibold text-slate-900">${data.name || ''}</td>
+                        <td class="px-4 py-3">${data.phone || ''}</td>
+                        <td class="px-4 py-3">${data.email || ''}</td>
+                        <td class="px-4 py-3 text-xs text-unique-teal font-semibold">${data.service || ''}</td>
+                        <td class="px-4 py-3 text-xs max-w-xs truncate">${data.message || 'بلا تحديات'}</td>
+                        <td class="px-4 py-3 text-xs font-semibold text-slate-400">${data.source || ''}</td>
+                    </tr>
+                `;
+            });
+            listContainer.innerHTML = html;
+        }
+
+        // دالة تصدير البيانات إلى ملف Excel/CSV
+        function exportToExcel() {
+            // جلب البيانات المحلية أولاً
+            const localList = JSON.parse(localStorage.getItem('unique_registrations')) || [];
+            if (localList.length === 0) {
+                showToast("لا توجد بيانات متاحة حالياً للتصدير، يرجى تعبئة طلب للتجربة أولاً.", "error");
+                return;
+            }
+
+            let csvContent = "\uFEFFالاسم,رقم الهاتف,البريد الإلكتروني,الخدمة المطلوبة,التحدي المهني,المصدر\n";
+            localList.forEach(item => {
+                const row = [
+                    `"${item.name.replace(/"/g, '""')}"`,
+                    `"${item.phone}"`,
+                    `"${item.email}"`,
+                    `"${item.service}"`,
+                    `"${(item.message || '').replace(/"/g, '""')}"`,
+                    `"${item.source}"`
+                ].join(",");
+                csvContent += row + "\n";
+            });
+
+            const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
+            const link = document.createElement("a");
+            const url = URL.createObjectURL(blob);
+            link.setAttribute("href", url);
+            link.setAttribute("download", `مسجلين_مجموعة_UNIQUE_${new Date().toLocaleDateString('ar-EG')}.csv`);
+            link.style.visibility = 'hidden';
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+            showToast("تم تصدير الجدول وتحميله كملف Excel بنجاح!", "success");
+        }
+    </script>
+</body>
+</html>
